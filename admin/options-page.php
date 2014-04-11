@@ -83,7 +83,7 @@ if (isset($_POST['submit']))
                     $mrcookies_legal_notice = mrcookies_get_option('mrcookies_legal_notice');
                     $pages = get_pages(array());
                     ?>
-                    <select name="mrcookies_legal_notice" id="mrcookies_legal_notice" class="regular-text">
+                    <select name="mrcookies_legal_notice" id="mrcookies_legal_notice">
                         <option value="0"></option>
                         <?php foreach ($pages AS $page): ?>
                         <option value="<?php echo $page->ID; ?>" <?php selected($mrcookies_legal_notice, $page->ID); ?>><?php echo $page->post_title; ?></option>
@@ -95,7 +95,7 @@ if (isset($_POST['submit']))
             <tr valign="top">
                 <th scope="row"><?php echo mrcookies_text('Use domain'); ?></th>
                 <td>
-                    <input type="checkbox" name="mrcookies_use_domain" id="mrcookies_use_domain" value="1" <?php checked(mrcookies_get_option('mrcookies_use_domain')); ?> />
+                    <input type="checkbox" name="mrcookies_use_domain" id="mrcookies_use_domain" value="1" <?php checked(mrcookies_get_option('mrcookies_use_domain')); ?> /> <small><?php echo mrcookies_text('Detects the domain of request to save the user confirmation.'); ?></small>
                 </td>
             </tr>
             
@@ -103,7 +103,7 @@ if (isset($_POST['submit']))
                 <th scope="row"><?php echo mrcookies_text('Style type'); ?></th>
                 <td>
                     <?php $mrcookies_style_type = mrcookies_get_option('mrcookies_style_type'); ?>
-                    <select name="mrcookies_style_type" id="mrcookies_style_type" class="regular-text">
+                    <select name="mrcookies_style_type" id="mrcookies_style_type">
                         <option value="<?php echo MRCOOKIES_STYLE_DEFAULT; ?>" <?php selected($mrcookies_style_type, MRCOOKIES_STYLE_DEFAULT); ?>><?php echo mrcookies_text('Mr Cookies style'); ?></option>
                         <option value="<?php echo MRCOOKIES_STYLE_CUSTOM; ?>" <?php selected($mrcookies_style_type, MRCOOKIES_STYLE_CUSTOM); ?>><?php echo mrcookies_text('Custom CSS'); ?></option>
                     </select>
@@ -148,7 +148,7 @@ if (isset($_POST['submit']))
             <tr valign="top">
                 <th scope="row"><?php echo mrcookies_text('Reset settings'); ?></th>
                 <td>
-                    <input type="checkbox" name="mrcookies_reset_settings" id="mrcookies_reset_settings" value="1" />
+                    <input type="checkbox" name="mrcookies_reset_settings" id="mrcookies_reset_settings" value="1" /> <small><?php echo mrcookies_text('Check to reset all options.'); ?></small>
                 </td>
             </tr>
             

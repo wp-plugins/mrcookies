@@ -44,12 +44,12 @@ function mrcookies_print_styles()
     {
         ?>
         <style type="text/css">
-            #mrcookies-wrapper {
+            #mrcookies-wrapper #mrcookies-container {
                 color: <?php echo mrcookies_get_option('mrcookies_style_text_color'); ?>;
                 background:<?php echo mrcookies_get_option('mrcookies_style_background_color'); ?> none;
                 border-color: <?php echo mrcookies_get_option('mrcookies_style_border_color'); ?>;
             }
-            #mrcookies-container a {
+            #mrcookies-container #mrcookies-container a {
                 color: <?php echo mrcookies_get_option('mrcookies_style_link_color'); ?>;
             }
         </style>

@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name: Mr Cookies
-Description: Mr Cookies
-Version: 1.0	
+Description: MrCookies plugin adapts your Wordpress to satisfy the European cookies laws.
+Version: 1.0
 Author: Artic studio
 Author URI: http://www.articstudio.com/
 Wordpress version supported: 3.0 and above
@@ -23,8 +23,6 @@ define( 'MRCOOKIES_STYLE_CUSTOM', 2 );
 
 /**** REQUIRED LIBRARIES ****/
 require MRCOOKIES_DIR_INCLUDE . '/functions.php';
-
-//load_plugin_textdomain('dpSocialTimeline', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/');
 
 /**** INITIALIZATION ****/
 function mrcookies_init()
@@ -61,7 +59,7 @@ function mrcookies_checkMU_activation()
 		foreach ($blog_list as $blog)
         {
 			switch_to_blog($blog['blog_id']);
-            if (mrcookies_get_option('mrcookies_installed'))
+            if (!mrcookies_get_option('mrcookies_installed'))
             {
                 mrcookies_save_default_options();
             }
@@ -70,7 +68,7 @@ function mrcookies_checkMU_activation()
 	}
     else
     {
-        if (mrcookies_get_option('mrcookies_installed'))
+        if (!mrcookies_get_option('mrcookies_installed'))
         {
             mrcookies_save_default_options();
         }
@@ -83,7 +81,7 @@ function mrcookies_checkMU_deactivation()
 {
     //mrcookies_checkMU_uninstall();
 }
-register_activation_hook( __FILE__, 'mrcookies_checkMU_deactivation' );
+register_deactivation_hook( __FILE__, 'mrcookies_checkMU_deactivation' );
 
 /**** UNINSTALL ****/
 function mrcookies_checkMU_uninstall()
@@ -119,20 +117,3 @@ function mrcookies_new_blog($blog_id, $user_id, $domain, $path, $site_id, $meta)
 	}
 }
 add_action('wpmu_new_blog', 'mrcookies_new_blog', 10, 6);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

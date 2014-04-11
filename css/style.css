@@ -14,15 +14,18 @@
     line-height:17px;
     text-align:left;
 }
+.admin-bar #mrcookies-wrapper {
+    top:32px;
+}
 #mrcookies-container {
     padding:10px 40px 10px 10px;
     position:relative;
 }
-#mrcookies-container a {
+#mrcookies-wrapper a {
     color:#b69b4d;
     text-decoration:none;
 }
-#mrcookies-container a:hover {
+#mrcookies-wrapper a:hover {
     text-decoration:underline;
 }
 #mrcookies-close {
