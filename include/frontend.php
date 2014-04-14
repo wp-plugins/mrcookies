@@ -7,11 +7,11 @@ function mrcookies_enqueue_scripts()
     $style_type = mrcookies_get_option('mrcookies_style_type');
     if ($style_type != MRCOOKIES_STYLE_CUSTOM)
     {
-        wp_enqueue_style('mrcookies-style', MRCOOKIES_URL . 'css/style.css', false, '1.0');
+        wp_enqueue_style('mrcookies-style', MRCOOKIES_URL . 'css/style.min.css', false, '1.0');
     }
     
     // Scripts
-    wp_enqueue_script('mrcookies', MRCOOKIES_URL . 'js/mrcookies.js', array(), '1.0', true);
+    wp_enqueue_script('mrcookies', MRCOOKIES_URL . 'js/mrcookies.min.js', array(), '1.0', true);
     
     $legal_notice = mrcookies_get_option('mrcookies_legal_notice');
     $legal_notice = $legal_notice > 0 ? get_permalink($legal_notice) : false;
