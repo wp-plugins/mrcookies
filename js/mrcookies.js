@@ -27,6 +27,19 @@ var MRCOOKIES_CONFIGS = {};
 var MRCOOKIES_ACCEPTED = false;
 
 /**
+ * Storage
+ * @type Object
+ */
+var MRCOOKIES_STORAGE;
+try {
+    if (localStorage.getItem) {
+        MRCOOKIES_STORAGE = localStorage;
+    }
+} catch(e) {
+    MRCOOKIES_STORAGE = {};
+}
+
+/**
  * Get domain name
  * @returns {String}
  */
@@ -71,6 +84,7 @@ function MRCOOKIES_LoadConfig()
         var domain = MRCOOKIES_GetDomainName();
         MRCOOKIES_CONFIGS.cookie_name += '_' + domain;
     }
+    console.log(MRCOOKIES_CONFIGS.cookie_name);
     
     if (!MRCOOKIES_CONFIGS.i18n)
     {
@@ -113,6 +127,10 @@ function MRCOOKIES_GetCookie(c_name, c_default)
          return unescape(y);
         }
     }
+    if (typeof MRCOOKIES_STORAGE[c_name] !== 'undefined')
+    {
+        return MRCOOKIES_STORAGE[c_name];
+    }
     return c_default;
 }
 
@@ -129,6 +147,7 @@ function MRCOOKIES_SetCookie(c_name, c_value, c_life_in_days)
 	c_expiration.setDate(c_expiration.getDate() + c_life_in_days);
 	var c_value = escape(c_value) + ((c_life_in_days === null) ? '' : '; expires=' + c_expiration.toUTCString());
 	document.cookie = c_name + '=' + c_value;
+    MRCOOKIES_STORAGE[c_name] = c_value;
     return true;
 }
 

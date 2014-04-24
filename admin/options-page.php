@@ -8,7 +8,7 @@ if (isset($_POST['submit']))
     $nonce = isset($_POST['_wpnonce']) ? $_POST['_wpnonce'] : '';
     if (wp_verify_nonce($nonce, 'mrcookies-options-group-options'))
     {
-        $reset_settings = (bool)(isset($_POST['mrcookies_reset_settings']) ? $_POST['mrcookies_reset_settings'] : $default_options['mrcookies_reset_settings']);
+        $reset_settings = (bool)(isset($_POST['mrcookies_reset_settings']) ? $_POST['mrcookies_reset_settings'] : false);
         if ($reset_settings)
         {
             mrcookies_save_default_options();

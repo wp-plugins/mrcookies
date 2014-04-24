@@ -11,7 +11,7 @@ function mrcookies_enqueue_scripts()
     }
     
     // Scripts
-    wp_enqueue_script('mrcookies', MRCOOKIES_URL . 'js/mrcookies.min.js', array(), '1.0', true);
+    wp_enqueue_script('mrcookies', MRCOOKIES_URL . 'js/mrcookies.min.js', array(), '1.1', true);
     
     $legal_notice = mrcookies_get_option('mrcookies_legal_notice');
     $legal_notice = $legal_notice > 0 ? get_permalink($legal_notice) : false;
