@@ -27,7 +27,7 @@ if (isset($_POST['submit']))
             mrcookies_save_option('mrcookies_style_link_color', isset($_POST['mrcookies_style_link_color']) ? $_POST['mrcookies_style_link_color'] : $default_options['mrcookies_style_link_color']);
             mrcookies_save_option('mrcookies_style_background_color', isset($_POST['mrcookies_style_background_color']) ? $_POST['mrcookies_style_background_color'] : $default_options['mrcookies_style_background_color']);
             mrcookies_save_option('mrcookies_style_border_color', isset($_POST['mrcookies_style_border_color']) ? $_POST['mrcookies_style_border_color'] : $default_options['mrcookies_style_border_color']);
-            mrcookies_save_option('mrcookies_style_custom_css', isset($_POST['mrcookies_style_custom_css']) ? $_POST['mrcookies_style_custom_css'] : $default_options['mrcookies_cookie_name']);
+            mrcookies_save_option('mrcookies_style_custom_css', isset($_POST['mrcookies_style_custom_css']) ? stripslashes($_POST['mrcookies_style_custom_css']) : $default_options['mrcookies_cookie_name']);
 
             $submited = 2;
         }
