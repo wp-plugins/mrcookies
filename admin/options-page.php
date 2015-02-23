@@ -20,7 +20,9 @@ if (isset($_POST['submit']))
 
             mrcookies_save_option('mrcookies_cookie_name', isset($_POST['mrcookies_cookie_name']) ? $_POST['mrcookies_cookie_name'] : $default_options['mrcookies_cookie_name']);
             mrcookies_save_option('mrcookies_cookie_lifetime', (int)(isset($_POST['mrcookies_cookie_lifetime']) ? $_POST['mrcookies_cookie_lifetime'] : $default_options['mrcookies_cookie_lifetime']));
+            mrcookies_save_option('mrcookies_legal_notice_type', (int)(isset($_POST['mrcookies_legal_notice_type']) ? $_POST['mrcookies_legal_notice_type'] : $default_options['mrcookies_legal_notice_type']));
             mrcookies_save_option('mrcookies_legal_notice', (int)(isset($_POST['mrcookies_legal_notice']) ? $_POST['mrcookies_legal_notice'] : $default_options['mrcookies_legal_notice']));
+            mrcookies_save_option('mrcookies_legal_notice_external', isset($_POST['mrcookies_legal_notice_external']) ? $_POST['mrcookies_legal_notice_external'] : $default_options['mrcookies_legal_notice_external']);
             mrcookies_save_option('mrcookies_use_domain', (bool)(isset($_POST['mrcookies_use_domain']) ? $_POST['mrcookies_use_domain'] : $default_options['mrcookies_use_domain']));
             mrcookies_save_option('mrcookies_style_type', (int)(isset($_POST['mrcookies_style_type']) ? $_POST['mrcookies_style_type'] : $default_options['mrcookies_style_type']));
             mrcookies_save_option('mrcookies_style_text_color', isset($_POST['mrcookies_style_text_color']) ? $_POST['mrcookies_style_text_color'] : $default_options['mrcookies_style_text_color']);
@@ -77,6 +79,19 @@ if (isset($_POST['submit']))
             </tr>
             
             <tr valign="top">
+                <th scope="row"><?php echo mrcookies_text('Legal notice type'); ?></th>
+                <td>
+                    <?php
+                    $mrcookies_legal_notice_type = mrcookies_get_option('mrcookies_legal_notice_type', 1);
+                    ?>
+                    <select name="mrcookies_legal_notice_type" id="mrcookies_legal_notice_type">
+                        <option value="1" <?php selected($mrcookies_legal_notice_type, 1); ?>><?php echo mrcookies_text('Page'); ?></option>
+                        <option value="2" <?php selected($mrcookies_legal_notice_type, 2); ?>><?php echo mrcookies_text('External'); ?></option>
+                    </select>
+                </td>
+            </tr>
+            
+            <tr valign="top" id="mrcookies_legal_notice_wrapper" style="<?php echo $mrcookies_legal_notice_type==1 ? '' : 'display:none;'; ?>">
                 <th scope="row"><?php echo mrcookies_text('Legal notice page'); ?></th>
                 <td>
                     <?php
@@ -89,6 +104,13 @@ if (isset($_POST['submit']))
                         <option value="<?php echo $page->ID; ?>" <?php selected($mrcookies_legal_notice, $page->ID); ?>><?php echo $page->post_title; ?></option>
                         <?php endforeach; ?>
                     </select>
+                </td>
+            </tr>
+            
+            <tr valign="top" id="mrcookies_legal_notice_external_wrapper" style="<?php echo $mrcookies_legal_notice_type==2 ? '' : 'display:none;'; ?>">
+                <th scope="row"><?php echo mrcookies_text('External link'); ?></th>
+                <td>
+                    <input type="text" name="mrcookies_legal_notice_external" id="mrcookies_legal_notice_external" value="<?php echo esc_attr(mrcookies_get_option('mrcookies_legal_notice_external')); ?>" class="regular-text" />
                 </td>
             </tr>
             

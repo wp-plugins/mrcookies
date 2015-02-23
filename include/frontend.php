@@ -13,8 +13,21 @@ function mrcookies_enqueue_scripts()
     // Scripts
     wp_enqueue_script('mrcookies', MRCOOKIES_URL . 'js/mrcookies.min.js', array(), '1.1', true);
     
-    $legal_notice = mrcookies_get_option('mrcookies_legal_notice');
-    $legal_notice = $legal_notice > 0 ? get_permalink($legal_notice) : false;
+    $legal_notice_type = mrcookies_get_option('mrcookies_legal_notice_type', 1);
+    if ($legal_notice_type == 1)
+    {
+        $legal_notice = mrcookies_get_option('mrcookies_legal_notice');
+        $legal_notice = $legal_notice > 0 ? get_permalink($legal_notice) : false;
+    }
+    else if ($legal_notice_type == 2)
+    {
+        $legal_notice = esc_url(mrcookies_get_option('mrcookies_legal_notice_external', ''));
+    }
+    else
+    {
+        $legal_notice = false;
+    }
+    
     wp_localize_script('mrcookies', 'MRCOOKIES', array(  
         'cookie_name' => mrcookies_get_option('mrcookies_cookie_name'),
         'cookie_life' => mrcookies_get_option('mrcookies_cookie_lifetime'),
