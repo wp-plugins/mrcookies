@@ -1,0 +1,32 @@
+# Translation of Mr Cookies
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2014-08-06 09:06+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Project-Id-Version: Mr Cookies\n"
+"POT-Creation-Date: \n"
+"Last-Translator: \n"
+"Language-Team: Artic studio\n"
+"X-Generator: Poedit 1.6.7\n"
+"Language: es_ES\n"
+
+#: Notice phrase
+msgid ""
+"This website uses own and/or third parties cookies to: analyze, personalize "
+"content and/or advertising. If you continue browsing, we consider that you "
+"accept the use."
+msgstr ""
+"Este sitio web utiliza cookies propias y/o de terceros para: el análisis, "
+"contenido personalizado y/o publicidad. Si continua navegando, consideramos "
+"que acepta la utilización."
+
+#: Notice link text
+msgid "More information"
+msgstr "Más información"
+
+#: Close link text
+msgid "Close"
+msgstr "Cerrar"

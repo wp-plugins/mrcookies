@@ -1,0 +1,47 @@
+#mrcookies-wrapper {
+    position:fixed;
+    top:0px;
+    left:0px;
+    right:0px;
+    width:100%;
+    background:#343434 none;
+    border-bottom:1px solid #b69b4d;
+    color:#ccc;
+    z-index: 99999;
+    min-height:20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:13px;
+    line-height:17px;
+    text-align:left;
+}
+.admin-bar #mrcookies-wrapper {
+    top:32px;
+}
+#mrcookies-container {
+    padding:10px 40px 10px 10px;
+    position:relative;
+}
+#mrcookies-wrapper a {
+    color:#b69b4d;
+    text-decoration:none;
+}
+#mrcookies-wrapper a:hover {
+    text-decoration:underline;
+}
+#mrcookies-close {
+    display:block;
+    position:absolute;
+    top:10.5px;
+    right:17px;
+    width:16px;
+    height:16px;
+    text-indent:-1000px;
+    overflow:hidden;
+    background:transparent url('../img/close.png') no-repeat center center;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+#mrcookies-close:hover {
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+}
