@@ -74,6 +74,7 @@ function mrcookies_get_default_options($load_custom = false)
     if (empty($__mrcookies_defaults['mrcookies_style_custom_css']) || $load_custom)
     {
         $__mrcookies_defaults['mrcookies_style_custom_css'] = file_get_contents(MRCOOKIES_DIR_CSS . '/style.css');
+		$__mrcookies_defaults['mrcookies_style_custom_css'] = str_replace('../img/close.png', MRCOOKIES_URL . 'img/close.png', $__mrcookies_defaults['mrcookies_style_custom_css']);
     }
     return $__mrcookies_defaults;
 }

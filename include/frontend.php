@@ -62,7 +62,7 @@ function mrcookies_print_styles()
                 background-color:<?php echo mrcookies_get_option('mrcookies_style_background_color'); ?> !important;
                 border-color: <?php echo mrcookies_get_option('mrcookies_style_border_color'); ?> !important;
             }
-            #mrcookies-container #mrcookies-container a {
+            #mrcookies-wrapper #mrcookies-container a {
                 color: <?php echo mrcookies_get_option('mrcookies_style_link_color'); ?>;
             }
         </style>
