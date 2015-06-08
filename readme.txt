@@ -2,8 +2,8 @@
 Contributors: articstudio
 Tags: cookies, cookie, european law, privacy
 Requires at least: 3.0.1
-Tested up to: 4.1.1
-Stable tag: 1.5.1
+Tested up to: 4.2.2
+Stable tag: 1.5.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,7 +22,10 @@ It's very simple to use, configure and adapt in your styles.
 - Custom stylesheet
 - Link to explanation page of cookies
 - Translations with .po and .mo files
-- Available in English, Spanish and Catalan.
+- Available in English, Spanish, Catalan and Italian.
+
+= Translators =
+- Italian: @spaghettiBCN
 
 == Installation ==
 
@@ -37,6 +40,10 @@ It's very simple to use, configure and adapt in your styles.
 1. Admin page
 
 == Changelog ==
+
+= 1.5.2 =
+* Italian translation by @spaghettiBCN
+* Updated the tested version
 
 = 1.5.1 =
 * Fix bug in CSS styles

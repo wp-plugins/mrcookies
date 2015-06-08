@@ -2,7 +2,7 @@
 /*
 Plugin Name: Mr Cookies
 Description: MrCookies plugin adapts your Wordpress to satisfy the European cookies laws.
-Version: 1.5.1
+Version: 1.5.2
 Author: Artic studio
 Author URI: http://www.articstudio.com/
 Wordpress version supported: 3.0 and above
